@@ -18,7 +18,7 @@ function checkcount(){
 
 	if (scount==3 &&  tcount==4 ) {
 	alert('正解！');
-	location.href = './fin/';
+	location.href = '../fin/';
 	}
 
 }
