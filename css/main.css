@@ -4,6 +4,12 @@ body {
     flex-flow: column;
     min-height: 100vh;
 }
+.star{
+hight :30%;
+width :30%;
+
+}
+
 
 .main {
     background: #ffffff;
