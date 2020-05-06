@@ -14,16 +14,18 @@ var btns =document.getElementsByClassName("btn-info");
 function checklast(value){
 
 	var collapses =document.getElementsByClassName("collapse");
-	var bol = false;
+	var bol = true;
 	var kt = false;
 	var mt = false;
 	var kn = false;
 	
 	for(var i=0; i<collapses.length;i++){
 	//一つずつ確認する
-	  var boli = collapses[i].classList.contains("show");
+	  var now  = collapses[i];
+	  var nowval = now.getAttribute("value");
+	  var boli = now.classList.contains("show");
 
-	    if(this.value = value){
+	    if(nowval == value){
 	    //押していたら、フラグを変える
 	    	if(boli == true){
 	    	    boli = false;
@@ -33,20 +35,18 @@ function checklast(value){
 	    }
 	    
 		
-	    if(this.value == "3" || this.value == "6" ||this.value == "10"){
-		    	if(boli == true){
-		    	    bol = true;
-		    	}else{
-		    	    bol = false;
-		    	}		    
-		}else{
-		    	if(boli == false){
-		    	    bol = true;
-		    	}else{
-		    	    bol = false;
-		    	}
+	    if(nowval == "3" || nowval == "6" || nowval == "10"){
+	      if(boli == false){
+	         bol = false;
+	      }
+	    }else{
+		   if(boli == true){
+		     bol = false;
+		   }
 		
 		}
+		
+		
 	}
 	
 	
