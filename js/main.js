@@ -12,30 +12,48 @@ var btns =document.getElementsByClassName("btn-info");
 	}
 	
 function checklast(value){
+
+	var collapses =document.getElementsByClassName("collapse");
+	var bol = false;
+	var kt = false;
+	var mt = false;
+	var kn = false;
+	
+	for(var i=0; i<collapses.length;i++){
+	//一つずつ確認する
+	  var boli = collapses[i].classList.contains("show");
+
+	    if(this.value = value){
+	    //押していたら、フラグを変える
+	    	if(boli == true){
+	    	    boli = false;
+	    	}else{
+	    	    boli = true;
+	    	}
+	    }
+	    
+		
+	    if(this.value == "3" || this.value == "6" ||this.value == "10"){
+		    	if(boli == true){
+		    	    bol = true;
+		    	}else{
+		    	    bol = false;
+		    	}		    
+		}else{
+		    	if(boli == false){
+		    	    bol = true;
+		    	}else{
+		    	    bol = false;
+		    	}
+		
+		}
+	}
+	
 	
 	var kt = document.getElementById("collapseExample3").classList.contains("show");
 	var mt = document.getElementById("collapseExample6").classList.contains("show");
 	var kn = document.getElementById("collapseExample10").classList.contains("show");
 	
-	var bol = false;
-	
-	if(value==1){
-		if(kt==false &&  mt==true &&kn == true){
-			bol = true;
-		}
-	}else if(value==2){
-		if(kt==true &&  mt==false &&kn == true){
-			bol = true;
-		}
-	}else if(value==3){
-		if(kt==true &&  mt==true &&kn == false){
-			bol = true;
-		}
-	}else{
-		if(kt==true &&  mt==true &&kn == true){
-			bol = true;	
-		}
-	}
 
 	if (bol == true) {
 	alert('何かが開きます');
