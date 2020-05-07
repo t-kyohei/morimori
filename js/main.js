@@ -1,6 +1,7 @@
 var scount=0;
 var tcount=0;
 var last=0;
+var answer3=0;
 
 var btns =document.getElementsByClassName("btn-info");
 	for(var i=0; i<btns.length;i++){
@@ -49,10 +50,7 @@ function checklast(value){
 		
 	}
 	
-	
-	var kt = document.getElementById("collapseExample3").classList.contains("show");
-	var mt = document.getElementById("collapseExample6").classList.contains("show");
-	var kn = document.getElementById("collapseExample10").classList.contains("show");
+
 	
 
 	if (bol == true) {
@@ -76,8 +74,99 @@ var text = document.getElementById("text").value;
 		alert("己の３つの扉を開いたときに鍵に導かれる");
 		last=1;
 	}
+	
+	if(text =="サカナのまきエサ" ){	
+		alert("OK");
+		
+	}
+
 
 }
 
 
+
+function sound()
+{
+	// [ID:sound-file]の音声ファイルを再生[play()]する
+	var sound =document.getElementById( 'sound-file' );
+	sound.play() ;
+}
+
+
+function sound2()
+{
+	// [ID:sound-file]の音声ファイルを再生[play()]する
+	document.getElementById( 'sound-file2' ).play() ;
+}
+
+
+//卵のチェック
+$(function() {
+     $(".egg").click(function() {
+     if(answer3==0){
+          var colorckeck = true;
+          var value = Number(this.getAttribute("value")) + 1;
+		  if(value== 7){
+		    value =1;
+		  }
+		  this.setAttribute("value",value);
+		  
+		  
+          // 現在のセルの色が無色透明かを判別
+          if(value=="1") {
+               // 水色に染める
+               $(this).css("background-color", "aqua");
+          } else if(value=="2"){
+               // 黄色にするyellow
+               $(this).css("background-color", "yellow");
+          }else if(value=="3"){
+               // 紫にする
+               $(this).css("background-color", "purple");
+          }else if(value=="4"){
+               // ピンクにする
+               $(this).css("background-color", "#FF69B4");
+          }else if(value=="5"){
+               // 黄緑にする
+               $(this).css("background-color", "lime");
+          }else if(value=="6"){
+               // 肌色にする
+               $(this).css("background-color", "#FFA07A");
+          }
+          
+          
+          var eggs =document.getElementsByClassName("egg");
+          
+		  for(var i=0; i<eggs.length;i++){
+			//一つずつ確認する
+	  		var now  = eggs[i];
+	  		var nowval = now.getAttribute("value");
+	  	   
+	  	   
+	    if((i == 0 || i==3 )&& nowval != 6){
+	    	colorckeck = false;
+	    }else if((i == 1 || i==2 )&& nowval != 4){
+	    	colorckeck = false;
+	    }else if((i == 4 || i==7 )&& nowval != 1){
+	    	colorckeck = false;
+	    }else if((i == 5 || i==6 )&& nowval != 2){
+	    	colorckeck = false;
+	    }else if((i == 8 || i==11 )&& nowval != 3){
+	    	colorckeck = false;
+	    }else if((i == 9 || i==10 )&& nowval != 5){
+	    	colorckeck = false;
+	    }
+
+		
+		}
+	   if(colorckeck == true){
+	   	document.getElementById("answer3").classList.remove("d-none");
+		answer3=1;
+	    }
+		
+		}
+		
+	
+          
+     });
+}); 
 

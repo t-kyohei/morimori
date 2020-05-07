@@ -32,6 +32,8 @@
  <h5 id="lasttext" class="d-none">ラストワード</h5>
   
   <br>
+  
+  <!-- おひつじ座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" value="1">
   <h3> 問題 <img class="star" src="../img/Aries.bmp"></h3>
   </button>
@@ -44,48 +46,84 @@
   <br>
   <br>
   
-  
+    <!-- おうし座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" value="2">
   <h3> 問題 <img class="star" src="../img/Taurus.bmp"></h3>
   </button>
 
    <div class="collapse" id="collapseExample2" value="2">
-   <br>
-  <h5>この島に流れる曲</h5>
+
   </div>
   <br>
   <br>
 
 
-
+<!-- ふたご座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample" value="3">
   <h3> 問題 <img class="star" src="../img/Gemini.bmp"></h3>
   </button>
 
    <div class="collapse" id="collapseExample3" value="3">
    <br>
+   <h5>正しい色を完成させろ</h5>
    <br>
- <input type="text" class="form-control" >
+   <table border="1" width="300" height="100">
+<tbody>
+<tr>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+</tr>
+<tr>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+</tr>
+<tr>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+</tr>
+</tbody>
+</table> 
+<br>
+  <div id="answer3" class="d-none">
+  <h5>正解！キーワードは</h5>
+  <h3>のらいぬ</h3>
+  </div>
   </div>
   <br>
+
   <br>
 
 
-
+<!-- かに座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample" value="4">
   <h3> 問題 <img class="star" src="../img/Cancer.bmp"></h3>
   </button>
 
    <div class="collapse" id="collapseExample4" value="4">
    <br>
+   <h5>耳を澄まして</h5>
    <br>
- <input type="text" class="form-control" >
+   <a onClick="sound()">
+    <img src="../img/bell.png"  id="">
+   </a>    
+   <br>
+   <br>
+    <a onClick="sound2()">
+    <img src="../img/bell2.png"  id="">
+   </a>  
+   
   </div>
   <br>
   <br>
 
 
-
+<!-- しし座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample" value="5">
   <h3> 問題 <img class="star" src="../img/Leo.bmp"></h3>
   </button>
@@ -93,12 +131,33 @@
    <div class="collapse" id="collapseExample5" value="5">
    <br>
    <br>
- <input type="text" class="form-control" >
+   <h5>正しい色を完成させろ</h5>
+   <br>
+   <table border="1" width="300" height="100">
+<tbody>
+<tr>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+</tr>
+<tr>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+<td class="egg"value = "0"> </td>
+</tr>
+</tbody>
+</table> 
+<br>
+  <div id="answer3" class="d-none">
+  <h5>正解！キーワードは</h5>
+  <h3>のらいぬ</h3>
+  </div>
   </div>
   <br>
   <br>
 
 
+<!--おとめ座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample" value="6">
   <h3> 問題 <img class="star" src="../img/Virgo.bmp"></h3>
   </button>
@@ -106,25 +165,26 @@
    <div class="collapse" id="collapseExample6" value="6">
    <br>
    <br>
- <input type="text" class="form-control" >
+ <img src="../img/jimen.png"  id="">
   </div>
   <br>
   <br>
 
-
+<!--てんびん座 -->  
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample" value="7">
   <h3> 問題 <img class="star" src="../img/Libra.bmp"></h3>
   </button>
 
    <div class="collapse" id="collapseExample7" value="7">
    <br>
-   <br>
- <input type="text" class="form-control" >
-  </div>
+  <h5>この島に流れるのは</h5>
+      <img src="../img/sen.png"  id="">
+  <h5>の曲<br>※ひらがな</h5>  </div>
   <br>
   <br>
   
-  
+ 
+<!--さそり座 -->  
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample" value="8">
   <h3> 問題 <img class="star" src="../img/Scorpio.bmp"></h3>
   </button>
@@ -137,20 +197,18 @@
   <br>
   <br>
   
-  
+<!--いて座 --> 
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample" value="9">
   <h3> 問題 <img class="star" src="../img/Sagittarius.bmp"></h3>
   </button>
 
    <div class="collapse" id="collapseExample9" value="9">
    <br>
-   <br>
- <input type="text" class="form-control" >
-  </div>
+    <img src="../img/za.png"  id="">  </div>
   <br>
   <br>
   
-  
+<!--やぎ座 --> 
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample10" aria-expanded="false" aria-controls="collapseExample"  value="10">
   <h3> 問題 <img class="star" src="../img/Capricorn.bmp"></h3>
   </button>
@@ -162,7 +220,8 @@
   </div>
   <br>
   <br>
-  
+
+<!--みずがめ座 --> 
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample11" aria-expanded="false" aria-controls="collapseExample" value="11">
   <h3> 問題 <img class="star" src="../img/Aquarius.bmp"></h3>
   </button>
@@ -175,7 +234,7 @@
   <br>
   <br>
 
-
+<!--うお座 --> 
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseExample12" aria-expanded="false" aria-controls="collapseExample" value="12">
   <h3> 問題 <img class="star" src="../img/Pisces.bmp"></h3>
   </button>
@@ -210,7 +269,13 @@
   </div>
     </footer>
     
-
+    <!-- 音声読み込み -->
+    <audio id="sound-file" preload="auto">
+	<source src="../sound/bell.m4a" type="audio/mpeg">
+    </audio>
+     <audio id="sound-file2" preload="auto">
+  	<source src="../sound/bell2.m4a" type="audio/mpeg">
+	</audio>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
