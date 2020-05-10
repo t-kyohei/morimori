@@ -2,7 +2,11 @@ var scount=0;
 var tcount=0;
 var last=0;
 var answer3=0;
-
+var answer5=0;
+/*
+*最終の3つの扉
+*
+*/
 var btns =document.getElementsByClassName("btn-info");
 	for(var i=0; i<btns.length;i++){
 		btns[i].onclick = function() {
@@ -66,6 +70,10 @@ function checklast(value){
 
 }
 
+/*
+*送信ボタン押下時のキーワード
+*
+*/
 
 
 document.getElementById("submit").onclick = function(){
@@ -73,16 +81,20 @@ var text = document.getElementById("text").value;
 	if(text =="12345" ){	
 		alert("己の３つの扉を開いたときに鍵に導かれる");
 		last=1;
-	}
-	
-	if(text =="サカナのまきエサ" ){	
+	}else if(text =="サカナのまきエサ" ){	
 		alert("OK");
 		
+	}else{
+	    alert("何も起きないようだ");
 	}
 
 
 }
 
+/*
+*ベルを出す音
+*
+*/
 
 
 function sound()
@@ -99,8 +111,10 @@ function sound2()
 	document.getElementById( 'sound-file2' ).play() ;
 }
 
-
-//卵のチェック
+/*
+*卵の色のチェック
+*
+*/
 $(function() {
      $(".egg").click(function() {
      if(answer3==0){
@@ -169,4 +183,67 @@ $(function() {
           
      });
 }); 
+
+
+
+/*
+*賞の色チェック
+*
+*/
+
+$(function() {
+     $(".kin").click(function() {
+     if(answer5==0){
+          var colorckeck = true;
+          var value = Number(this.getAttribute("value")) + 1;
+		  if(value== 4){
+		    value =1;
+		  }
+		  this.setAttribute("value",value);
+		  
+		  
+          // 現在のセルの色が無色透明かを判別
+          if(value=="1") {
+               // 銀色に染める
+               $(this).css("background-color", "#C9CACA");
+          } else if(value=="2"){
+               // 金色にするyellow
+               $(this).css("background-color", "#DBB400");
+          }else if(value=="3"){
+               // 銅にする
+               $(this).css("background-color", "#C9AE5D");
+          }
+          
+          var kins =document.getElementsByClassName("kin");
+          
+		  for(var i=0; i<kins.length;i++){
+			//一つずつ確認する
+	  		var now  = kins[i];
+	  		var nowval = now.getAttribute("value");
+	  	   
+	  	   
+	    if((i == 0 || i==3 )&& nowval != 2){
+	    	colorckeck = false;
+	    }else if((i == 1 || i==4 )&& nowval != 1){
+	    	colorckeck = false;
+	    }else if((i == 2 || i==5 )&& nowval != 3){
+	    	colorckeck = false;
+	    }
+
+		
+		}
+	   if(colorckeck == true){
+	   	document.getElementById("answer5").classList.remove("d-none");
+		answer5=1;
+	    }
+		
+		}
+		
+	
+          
+     });
+}); 
+
+
+
 
