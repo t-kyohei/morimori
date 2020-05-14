@@ -174,7 +174,10 @@ $(function() {
 		}
 	   if(colorckeck == true){
 	   	document.getElementById("answer3").classList.remove("d-none");
+	   	document.getElementById("starmark").classList.remove("d-none");
+	   	document.getElementById("starmark2").classList.remove("d-none");
 		answer3=1;
+		
 	    }
 		
 		}
