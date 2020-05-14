@@ -16,7 +16,7 @@ document.getElementById("tanu").onclick = function() {
 
 function checkcount(){
 
-	if (scount==3 &&  tcount==4 ) {
+	if (scount==8 &&  tcount==5 ) {
 	alert('正解！');
    document.getElementById("next").classList.remove("d-none");
 
