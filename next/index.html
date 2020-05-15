@@ -15,11 +15,24 @@
    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     -->  
-    <!-- ヘッダー読み込み -->   
-    <script src="../js/main.js"></script>
+    <!-- ヘッダー読み込み
+    <script src="../js/main.js"></script>-->
 
 
     <title >ベロー島からの脱出</title>
+    
+     <script language="javascript" type="text/javascript">
+     
+     //
+     localStorage.setItem('last', "OK");
+    
+    if(localStorage.getItem('finish')) {
+   	document.getElementById("door").classList.add("d-none");
+	document.getElementById("finish").classList.remove("d-none");
+    }
+    
+    </script>
+    
   </head>
   <body class="body">
 <nav class="navbar navbar-light bg-light">
@@ -30,7 +43,12 @@
 <br>
 
     <div class="container text-center">
-    <h4>脱出成功</h4>
+    <br>
+	<br>
+	<br>
+
+    <h3 id="door">己の3つの扉のみを開いた時に、脱出へ導かれる</h3>
+    <h3 id ="finish" class="d-none">脱出成功</h3>
 <br>
     </div>
     

@@ -3,6 +3,10 @@ var tcount=0;
 var last=0;
 var answer3=0;
 var answer5=0;
+var local = localStorage.getItem('last');
+if(local == "OK"){
+ last=1;
+}
 /*
 *最終の3つの扉
 *
@@ -58,10 +62,13 @@ function checklast(value){
 	
 
 	if (bol == true) {
-	alert('何かが開きます');
 	document.getElementById("lasttext").classList.remove("d-none");
 	document.getElementById("maintext").classList.add("d-none");
+	alert("ようこそ");
+    localStorage.setItem('finish', "OK");
+    window.location.href = '../next/'; 
 	
+		
 	}else{
 	document.getElementById("lasttext").classList.add("d-none");
 	document.getElementById("maintext").classList.remove("d-none");
@@ -78,11 +85,13 @@ function checklast(value){
 
 document.getElementById("submit").onclick = function(){
 var text = document.getElementById("text").value;
-	if(text =="12345" ){	
+	/*if(text =="12345" ){	
 		alert("己の３つの扉を開いたときに鍵に導かれる");
 		last=1;
-	}else if(text =="サカナのまきエサ" ){	
-		alert("OK");
+	}else */
+	if(text =="サカナのまきエサ" || text == "さかなのまきえさ" || text == "サカナのまきえさ" || text == "サカナノマキエサ"){	
+	     alert("渦が出現した");
+		document.getElementById("uzu").classList.remove("d-none");
 		
 	}else{
 	    alert("何も起きないようだ");
