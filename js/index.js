@@ -25,30 +25,44 @@ function checkcount(){
 }
 
 
-var kiba = document.getElementById("kiba");
-kiba.style.position = "absolute";
+		 function touchStartEvent(event) {
+            // タッチによる画面スクロールを止める
+            event.preventDefault();
+        }
 
-kiba.setAttribute('draggable', true);
-    kiba.addEventListener('touchstart', function(e){
-        draggingItem = kiba;
-    });
-    kiba.addEventListener('touchend', function(e){
-        draggingItem = null;
-    });
-    kiba.addEventListener('touchmove', function(e){
-        e.preventDefault();
-        var getOrder = function(elem){
-            return [].indexOf.call(elem.parentNode.children, elem);
+        function touchMoveEvent(event) {
+            event.preventDefault();
+
+            // ドラッグ中のアイテムをカーソルの位置に追従
+            var draggedElem = event.target;
+            var touch = event.changedTouches[0];
+            event.target.style.position = "fixed";
+            event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight / 2) + "px";
+            event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth / 2) + "px";
         }
-        var pointedElement = document.elementFromPoint(e.pageX - window.pageXOffset, e.pageY - window.pageYOffset);
-        if(!pointedElement.getAttribute('draggable') || pointedElement == draggingItem) return;
-        var order = getOrder(pointedElement) - getOrder(draggingItem);
-        if(order > 0) {
-            pointedElement.parentNode.insertBefore(pointedElement, draggingItem);
-        } else if (order < 0) {
-            pointedElement.parentNode.insertBefore(draggingItem, pointedElement);
+
+        function touchEndEvent(event) {
+            event.preventDefault();
+
+            // ドラッグ中の操作のために変更していたスタイルを元に戻す
+            var droppedElem = event.target;
+            droppedElem.style.position = "";
+            event.target.style.top = "";
+            event.target.style.left = "";
+
+            // ドロップした位置にあるドロップ可能なエレメントに親子付けする
+            var touch = event.changedTouches[0];
+            // スクロール分を加味した座標に存在するエレメントを新しい親とする
+            var newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
+            if (newParentElem.className == "droppable-elem") {
+                newParentElem.appendChild(droppedElem);
+            }
         }
+
         
-     });
-
-
+            // ドラッグ可能アイテムへのタッチイベントの設定
+                var kiba =  document.getElementById("kiba")
+                kiba.addEventListener('touchstart', touchStartEvent, false);
+                kiba.addEventListener('touchmove', touchMoveEvent, false);
+                kiba.addEventListener('touchend', touchEndEvent, false);
+        
