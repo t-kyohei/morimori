@@ -25,5 +25,19 @@ function checkcount(){
 }
 
 
+var kiba = document.getElementById("kiba");
+kiba.style.position = "absolute";
+
+kiba.onmousedown = function(event){
+  document.addEventListener("mousemove",onMouseMove);
+}
+var onMouseMove = function(event){
+  var x = event.clientX;
+  var y = event.clientY;
+  var width = kiba.offsetWidth;
+  var height = kiba.offsetHeight;
+  kiba.style.top = (y-height/2) + "px";
+  kiba.style.left = (x-width/2) + "px";
+}
 
 

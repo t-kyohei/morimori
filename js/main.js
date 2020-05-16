@@ -1,12 +1,27 @@
 var scount=0;
 var tcount=0;
 var last=0;
+var last2=0;
 var answer3=0;
 var answer5=0;
+var answer52=0;
 var local = localStorage.getItem('last');
 if(local == "OK"){
  last=1;
 }
+
+var local2 = localStorage.getItem('last');
+if(local2 == "OK"){
+ last2=1;
+}
+
+//扉を開いた後の表示制御
+
+if(last2==1){
+
+}
+
+
 /*
 *最終の3つの扉
 *
@@ -64,9 +79,9 @@ function checklast(value){
 	if (bol == true) {
 	document.getElementById("lasttext").classList.remove("d-none");
 	document.getElementById("maintext").classList.add("d-none");
-	alert("何かが起きた");
-    localStorage.setItem('finish', "OK");
-    window.location.href = '../next/'; 
+	alert("何かが変わった");
+    localStorage.setItem('last2', "OK");
+    window.location.href = './main/'; 
 	
 		
 	}else{
@@ -213,7 +228,56 @@ $(function() {
 
 $(function() {
      $(".kin").click(function() {
-     if(answer5==0){
+     if(last2==1){
+         if(answer52==0){
+          var colorckeck = true;
+          var value = Number(this.getAttribute("value")) + 1;
+		  if(value== 4){
+		    value =1;
+		  }
+		  this.setAttribute("value",value);
+		  
+		  
+          // 現在のセルの色が無色透明かを判別
+          if(value=="1") {
+               // 赤色に染める
+               $(this).css("background-color", "#C9CACA");
+          } else if(value=="2"){
+               // 茶色にするyellow
+               $(this).css("background-color", "#DBB400");
+          }else if(value=="3"){
+               // 黄色にする
+               $(this).css("background-color", "#C9AE5D");
+          }
+          
+          var kins =document.getElementsByClassName("kin");
+          
+		  for(var i=0; i<kins.length;i++){
+			//一つずつ確認する
+	  		var now  = kins[i];
+	  		var nowval = now.getAttribute("value");
+	  	   
+	  	   
+	    if((i == 0 || i==3 )&& nowval != 2){
+	    	colorckeck = false;
+	    }else if((i == 1 || i==4 )&& nowval != 1){
+	    	colorckeck = false;
+	    }else if((i == 2 || i==5 )&& nowval != 3){
+	    	colorckeck = false;
+	    }
+
+		
+		}
+	   if(colorckeck == true){
+	   	document.getElementById("answer5").classList.remove("d-none");
+		answer5=1;
+	    }
+		
+		}
+     
+     
+     }else{
+     	if(answer5==0){
           var colorckeck = true;
           var value = Number(this.getAttribute("value")) + 1;
 		  if(value== 4){
@@ -259,7 +323,7 @@ $(function() {
 		
 		}
 		
-	
+	}
           
      });
 }); 
