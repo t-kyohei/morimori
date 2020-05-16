@@ -10,7 +10,7 @@ if(local == "OK"){
  last=1;
 }
 
-var local2 = localStorage.getItem('last');
+var local2 = localStorage.getItem('last2');
 if(local2 == "OK"){
  last2=1;
 }
@@ -18,7 +18,9 @@ if(local2 == "OK"){
 //扉を開いた後の表示制御
 
 if(last2==1){
-
+	document.getElementById("aries").classList.add("d-none");
+	document.getElementById("leo").classList.add("d-none");
+	document.getElementById("pisces").classList.add("d-none");
 }
 
 
