@@ -64,7 +64,7 @@ function checklast(value){
 	if (bol == true) {
 	document.getElementById("lasttext").classList.remove("d-none");
 	document.getElementById("maintext").classList.add("d-none");
-	alert("ようこそ");
+	alert("何かが起きた");
     localStorage.setItem('finish', "OK");
     window.location.href = '../next/'; 
 	
