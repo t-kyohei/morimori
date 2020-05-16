@@ -93,6 +93,13 @@ var text = document.getElementById("text").value;
 	     alert("渦が出現した");
 		document.getElementById("uzu").classList.remove("d-none");
 		
+	}else if(text =="まったりん"){
+	     if(last == 1){
+	        alert("まっ");
+	     	localStorage.setItem('finish', "OK");
+         	window.location.href = '../next/'; 
+         }
+	     alert("困ったりん");
 	}else{
 	    alert("何も起きないようだ");
 	}
