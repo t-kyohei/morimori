@@ -28,16 +28,27 @@ function checkcount(){
 var kiba = document.getElementById("kiba");
 kiba.style.position = "absolute";
 
-kiba.onmousedown = function(event){
-  document.addEventListener("mousemove",onMouseMove);
-}
-var onMouseMove = function(event){
-  var x = event.clientX;
-  var y = event.clientY;
-  var width = kiba.offsetWidth;
-  var height = kiba.offsetHeight;
-  kiba.style.top = (y-height/2) + "px";
-  kiba.style.left = (x-width/2) + "px";
-}
+kiba.setAttribute('draggable', true);
+    kiba.addEventListener('touchstart', function(e){
+        draggingItem = kiba;
+    });
+    kiba.addEventListener('touchend', function(e){
+        draggingItem = null;
+    });
+    kiba.addEventListener('touchmove', function(e){
+        e.preventDefault();
+        var getOrder = function(elem){
+            return [].indexOf.call(elem.parentNode.children, elem);
+        }
+        var pointedElement = document.elementFromPoint(e.pageX - window.pageXOffset, e.pageY - window.pageYOffset);
+        if(!pointedElement.getAttribute('draggable') || pointedElement == draggingItem) return;
+        var order = getOrder(pointedElement) - getOrder(draggingItem);
+        if(order > 0) {
+            pointedElement.parentNode.insertBefore(pointedElement, draggingItem);
+        } else if (order < 0) {
+            pointedElement.parentNode.insertBefore(draggingItem, pointedElement);
+        }
+        
+     });
 
 
