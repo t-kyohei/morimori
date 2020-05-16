@@ -54,8 +54,12 @@ function checkcount(){
             var touch = event.changedTouches[0];
             // スクロール分を加味した座標に存在するエレメントを新しい親とする
             var newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
+            if(newParentElem.id == "tota"){
+               alert("とたけけ");
+            }
             if (newParentElem.className == "droppable-elem") {
                 newParentElem.appendChild(droppedElem);
+                
             }
         }
 
