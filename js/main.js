@@ -98,8 +98,9 @@ var text = document.getElementById("text").value;
 	        alert("まっ");
 	     	localStorage.setItem('finish', "OK");
          	window.location.href = '../next/'; 
-         }
+         }else{
 	     alert("困ったりん");
+	     }
 	}else{
 	    alert("何も起きないようだ");
 	}
