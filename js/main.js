@@ -121,6 +121,7 @@ var text = document.getElementById("text").value;
 	     alert("困ったりん");
 	     }
 	}else if(last2 == 1&& (text =="噴水"||text =="ふんすい")){
+	   	 localStorage.setItem('kiba', "OK");
 	     alert("何かが出現した");
 	     document.getElementById("eru").classList.remove("d-none");
          

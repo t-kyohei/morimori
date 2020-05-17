@@ -19,7 +19,7 @@ document.getElementById("tota").onclick = function() {
 };
 
 
-var local2 = localStorage.getItem('last2');
+var local2 = localStorage.getItem('kiba');
 if(local2 == "OK"){
  document.getElementById("kiba").classList.remove("d-none");
  document.getElementById("head").classList.add("d-none"); 
