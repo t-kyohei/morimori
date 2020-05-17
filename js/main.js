@@ -81,7 +81,7 @@ function checklast(value){
 
 	if (bol == true) {
 	
-	alert("何かが変わった");
+	alert("何かが変わった。変わった全て確認せよ。");
 	localStorage.setItem('last2', "OK");
     window.location.href = './'; 
 	
@@ -256,7 +256,7 @@ $(function() {
                $(this).css("background-color", "#FFFF00");
           }else if(value=="4"){
                // オレンジにする
-               $(this).css("background-color", "#FF4F02");
+               $(this).css("background-color", "#FF773E");
           }else if(value=="5"){
                // 緑色にする
                $(this).css("background-color", "#008080");
@@ -273,17 +273,17 @@ $(function() {
 	  		var nowval = now.getAttribute("value");
 	  	   
 	  	   
-	    if((i == 0)&& nowval != 1){
+	    if(i == )&& nowval != 1){
 	    	colorckeck = false;
-	    }else if((i == 1)&& nowval != 5){
+	    }else if(i == 1&& nowval != 5){
 	    	colorckeck = false;
-	    }else if((i == 2 )&& nowval != 3){
+	    }else if(i == 2 && nowval != 3){
 	    	colorckeck = false;
-	    }else if((i == 3 )&& nowval != 4){
+	    }else if(i == 3 && nowval != 4){
 	    	colorckeck = false;
-	    }else if((i == 4 )&& nowval != 6){
+	    }else if(i == 4 && nowval != 6){
 	    	colorckeck = false;
-	    }else if((i == 5 )&& nowval != 2){
+	    }else if(i == 5 && nowval != 2){
 	    	colorckeck = false;
 	    }
 
