@@ -120,7 +120,7 @@ var text = document.getElementById("text").value;
 	     }
 	}else if(last2 == 1&& (text =="噴水"||text =="ふんすい")){
 	     alert("何かが出現した");
-	     document.getElementById("uzu").classList.remove("d-none");
+	     document.getElementById("eru").classList.remove("d-none");
          
 	}else{
 	    alert("何も起きないようだ");
