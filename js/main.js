@@ -21,6 +21,7 @@ if(last2==1){
 	document.getElementById("aries").classList.add("d-none");
 	document.getElementById("leo").classList.add("d-none");
 	document.getElementById("pisces").classList.add("d-none");
+	document.getElementById("goza").classList.remove("d-none");
 }
 
 
@@ -79,11 +80,10 @@ function checklast(value){
 	
 
 	if (bol == true) {
-	document.getElementById("lasttext").classList.remove("d-none");
-	document.getElementById("maintext").classList.add("d-none");
+	
 	alert("何かが変わった");
-    localStorage.setItem('last2', "OK");
-    window.location.href = './main/'; 
+	localStorage.setItem('last2', "OK");
+    window.location.href = './'; 
 	
 		
 	}else{
@@ -118,6 +118,10 @@ var text = document.getElementById("text").value;
          }else{
 	     alert("困ったりん");
 	     }
+	}else if(last2 == 1&& (text =="噴水"||text =="ふんすい")){
+	     alert("何かが出現した");
+	     document.getElementById("uzu").classList.remove("d-none");
+         
 	}else{
 	    alert("何も起きないようだ");
 	}
@@ -234,7 +238,7 @@ $(function() {
          if(answer52==0){
           var colorckeck = true;
           var value = Number(this.getAttribute("value")) + 1;
-		  if(value== 4){
+		  if(value== 7){
 		    value =1;
 		  }
 		  this.setAttribute("value",value);
@@ -243,13 +247,22 @@ $(function() {
           // 現在のセルの色が無色透明かを判別
           if(value=="1") {
                // 赤色に染める
-               $(this).css("background-color", "#C9CACA");
+               $(this).css("background-color", "#FF0000");
           } else if(value=="2"){
-               // 茶色にするyellow
-               $(this).css("background-color", "#DBB400");
+               // ピンクにする
+               $(this).css("background-color", "#FF69B4");
           }else if(value=="3"){
                // 黄色にする
-               $(this).css("background-color", "#C9AE5D");
+               $(this).css("background-color", "#FFFF00");
+          }else if(value=="4"){
+               // オレンジにする
+               $(this).css("background-color", "#FF4F02");
+          }else if(value=="5"){
+               // 緑色にする
+               $(this).css("background-color", "#008080");
+          }else if(value=="6"){
+               // 茶色にする
+               $(this).css("background-color", "#FFD700");
           }
           
           var kins =document.getElementsByClassName("kin");
@@ -260,19 +273,25 @@ $(function() {
 	  		var nowval = now.getAttribute("value");
 	  	   
 	  	   
-	    if((i == 0 || i==3 )&& nowval != 2){
+	    if((i == 0)&& nowval != 1){
 	    	colorckeck = false;
-	    }else if((i == 1 || i==4 )&& nowval != 1){
+	    }else if((i == 1)&& nowval != 5){
 	    	colorckeck = false;
-	    }else if((i == 2 || i==5 )&& nowval != 3){
+	    }else if((i == 2 )&& nowval != 3){
+	    	colorckeck = false;
+	    }else if((i == 3 )&& nowval != 4){
+	    	colorckeck = false;
+	    }else if((i == 4 )&& nowval != 6){
+	    	colorckeck = false;
+	    }else if((i == 5 )&& nowval != 2){
 	    	colorckeck = false;
 	    }
 
 		
 		}
 	   if(colorckeck == true){
-	   	document.getElementById("answer5").classList.remove("d-none");
-		answer5=1;
+	   	document.getElementById("answer52").classList.remove("d-none");
+		answer52=1;
 	    }
 		
 		}

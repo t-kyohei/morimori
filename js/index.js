@@ -13,6 +13,13 @@ document.getElementById("tanu").onclick = function() {
 };
 
 
+var local2 = localStorage.getItem('last2');
+if(local2 == "OK"){
+ document.getElementById("kiba").classList.remove("d-none");
+ document.getElementById("head").classList.add("d-none"); 
+
+}
+
 
 function checkcount(){
 
@@ -55,12 +62,18 @@ function checkcount(){
             // スクロール分を加味した座標に存在するエレメントを新しい親とする
             var newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
             if(newParentElem.id == "tota"){
-               alert("とたけけ");
+               alert("こいつは狼だ！");
+               localStorage.setItem('finish', "OK");
+                window.location.href = './next/'; 
+               
+            }else if(newParentElem.id == "tanu"){
+               alert("食べちゃダメ！");
+               
+               
+            }else if(newParentElem.id == "shizu"){
+               alert("食べちゃダメ！");
             }
-            if (newParentElem.className == "droppable-elem") {
-                newParentElem.appendChild(droppedElem);
-                
-            }
+
         }
 
         
