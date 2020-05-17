@@ -273,7 +273,7 @@ $(function() {
 	  		var nowval = now.getAttribute("value");
 	  	   
 	  	   
-	    if(i == )&& nowval != 1){
+	    if(i == 0)&& nowval != 1){
 	    	colorckeck = false;
 	    }else if(i == 1&& nowval != 5){
 	    	colorckeck = false;
