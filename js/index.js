@@ -1,5 +1,6 @@
 var scount=0;
 var tcount=0;
+var tocount=0;
 
 
 document.getElementById("shizu").onclick = function() {
@@ -9,6 +10,11 @@ document.getElementById("shizu").onclick = function() {
 
 document.getElementById("tanu").onclick = function() {
    tcount ++;
+   checkcount();
+};
+
+document.getElementById("tota").onclick = function() {
+   tocount ++;
    checkcount();
 };
 
@@ -27,6 +33,10 @@ function checkcount(){
 	alert('正解！');
    document.getElementById("next").classList.remove("d-none");
 
+	}else if(scount==8 && tocount==5){
+	
+	alert('それは違うよ');
+	
 	}
 
 }

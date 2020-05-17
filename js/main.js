@@ -22,6 +22,8 @@ if(last2==1){
 	document.getElementById("leo").classList.add("d-none");
 	document.getElementById("pisces").classList.add("d-none");
 	document.getElementById("goza").classList.remove("d-none");
+	document.getElementById("reverse").classList.remove("d-none");
+
 }
 
 
@@ -351,4 +353,9 @@ $(function() {
 
 
 
+//戻すボタン
+document.getElementById("submit").onclick = function(){
+localStorage.removeItem('last2');
+window.location.href = './'; 
 
+}
