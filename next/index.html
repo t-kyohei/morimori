@@ -38,7 +38,11 @@
 	<br>
 
     <h3 id="door" class="d">己の3つの扉のみを開いた時に、脱出へ導かれる</h3>
-    <h3 id ="finish" class="d-none">脱出成功</h3>
+    <div id ="finish" class="d-none">
+    <h3>脱出成功</h3>
+    <br>
+    <button id="finish" role="button" class="btn btn-primary">終了する</button>
+    </div>
 <br>
     </div>
     
@@ -60,6 +64,15 @@
     if(localStorage.getItem('finish')) {
    	document.getElementById("door").classList.add("d-none");
 	document.getElementById("finish").classList.remove("d-none");
+    }
+    
+    //終了ボタン押下
+    document.getElementById("finish").onclick = function(){
+    localStorage.clear();
+    alert("ありがとうございました。");
+    window.location.href = '../'; 
+    
+    
     }
     
     </script>
