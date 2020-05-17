@@ -275,15 +275,15 @@ $(function() {
 	  	   
 	    if(i == 0 && nowval != 1){
 	    	colorckeck = false;
-	    }else if(i == 1&& nowval != 5){
+	    }else if(i == 1&& nowval != 6){
 	    	colorckeck = false;
 	    }else if(i == 2 && nowval != 3){
 	    	colorckeck = false;
 	    }else if(i == 3 && nowval != 4){
 	    	colorckeck = false;
-	    }else if(i == 4 && nowval != 6){
+	    }else if(i == 4 && nowval != 2){
 	    	colorckeck = false;
-	    }else if(i == 5 && nowval != 2){
+	    }else if(i == 5 && nowval != 5){
 	    	colorckeck = false;
 	    }
 
