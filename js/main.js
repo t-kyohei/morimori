@@ -354,7 +354,7 @@ $(function() {
 
 
 //戻すボタン
-document.getElementById("submit").onclick = function(){
+document.getElementById("reverse").onclick = function(){
 localStorage.removeItem('last2');
 window.location.href = './'; 
 
